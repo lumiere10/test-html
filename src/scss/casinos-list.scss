@@ -1,11 +1,19 @@
 .casinos_list {
-    padding: 10px 50px;
+    padding: 10px 3.5vw;
     display: flex;
     flex-direction: column;
     grid-row-gap: 16px;
 
     @media screen and (max-width: 768px) {
         padding: 10px 1%;
+        grid-row-gap: 7px;
+
+    }
+
+    @media screen and (max-width: 450px) {
+        padding: 13px 1%;
+        grid-row-gap: 6px;
+
     }
 
     .casino_card {
@@ -23,6 +31,10 @@
             @media screen and (max-width: 768px) {
                 padding: 15px 7px;
             }
+
+            @media screen and (max-width: 450px) {
+                padding: 14px 9px;
+            }
         }
 
         &__wrap_title {
@@ -36,6 +48,10 @@
                 svg {
                     height: 17px;
                 }
+            }
+
+            @media screen and (max-width: 450px) {
+                grid-column-gap: 2px;
             }
 
             .number {
@@ -81,6 +97,14 @@
             @media screen and (max-width: 768px) {
                 width: 181px;
                 left: 63%;
+                height: 34px;
+            }
+
+            @media screen and (max-width: 450px) {
+                width: 140px;
+                left: 55%;
+                height: 32px;
+                font-size: 10px;
             }
 
             &.orange {
@@ -124,8 +148,11 @@
 
             @media screen and (max-width: 768px) {
                 font-size: 14px;
+            }
 
-
+            @media screen and (max-width: 450px) {
+                margin-right: 4px;
+                grid-column-gap: 8px;
             }
         }
 
@@ -138,7 +165,10 @@
             @media screen and (max-width: 768px) {
                 grid-template-columns: 100%;
                 padding: 13px 0;
+            }
 
+            @media screen and (max-width: 450px) {
+                padding: 10px 0;
             }
         }
 
@@ -152,6 +182,7 @@
 
             @media screen and (max-width: 768px) {
                 padding: 0 8px;
+                grid-gap: 16px;
 
                 &::after {
                     content: "";
@@ -159,10 +190,14 @@
                     width: 100%;
                     position: absolute;
                     display: block;
-                    bottom: 0;
+                    bottom: -14px;
                     left: 0;
                     background-color: #EBECF5;
                 }
+            }
+
+            @media screen and (max-width: 320px) {
+                grid-gap: 10px
             }
 
             .welcome_bonus__logo {
@@ -177,6 +212,12 @@
                 @media screen and (max-width: 768px) {
                     height: 60px;
                     width: 72px;
+                }
+
+                @media screen and (max-width: 320px) {
+                    height: 84px;
+                    width: 72px;
+                    border-radius: 10px;
                 }
 
                 .logo {
@@ -211,11 +252,21 @@
                     color: #313446;
                     font-weight: 800;
                     font-size: 24px;
+
+                    @media screen and (max-width: 768px) {
+                        font-size: 18px;
+                    }
                 }
+
 
                 &__desc {
                     color: #72768D;
                     margin-top: 16px;
+
+                    @media screen and (max-width: 768px) {
+                        margin-top: 9px;
+
+                    }
                 }
             }
         }
@@ -223,6 +274,11 @@
         &__benefits {
             @media screen and (max-width: 768px) {
                 padding: 0 8px;
+                padding-top: 36px;
+            }
+
+            @media screen and (max-width: 320px) {
+                padding-top: 28px;
             }
         }
 
@@ -233,14 +289,30 @@
                 display: grid;
                 margin-top: 0;
                 grid-template-columns: repeat(2, 1fr);
+                grid-gap: 19px 33px;
+            }
+
+            @media screen and (max-width: 320px) {
+                display: flex;
+                grid-gap: 10px 15px;
+                flex-wrap: wrap;
             }
 
             &__item {
                 position: relative;
                 padding-left: 24px;
 
+                @media screen and (max-width: 320px) {
+                    padding-left: 21px;
+                    align-content: center;
+                }
+
                 &:not(:last-child) {
                     margin-bottom: 11px;
+
+                    @media screen and (max-width: 768px) {
+                        margin-bottom: 0;
+                    }
                 }
 
                 &::before {
@@ -274,6 +346,16 @@
             justify-content: center;
             position: relative;
 
+            svg {
+                transition: transform 0.3s;
+            }
+
+            &.click {
+                svg {
+                    transform: rotate(180deg);
+                }
+            }
+
             @media screen and (max-width: 768px) {
                 display: none;
 
@@ -284,8 +366,12 @@
 
                 @media screen and (max-width: 768px) {
                     display: flex;
-                    grid-column-start: 1;
-                    grid-column-end: 3;
+                    width: 100%;
+                    margin-top: 15px;
+                }
+
+                @media screen and (max-width: 320px) {
+                    margin-top: 3px;
                 }
             }
 
@@ -361,9 +447,27 @@
             padding-right: 17px;
 
             @media screen and (max-width: 768px) {
-                padding: 17px 17px;
-                display: grid;
-                grid-template-columns: 50% 50%;
+                padding: 0 8px;
+                padding-top: 20px;
+                flex-direction: row;
+                flex-wrap: wrap;
+                grid-column-gap: 6px;
+            }
+
+            @media screen and (max-width: 320px) {
+                flex-direction: column;
+                grid-row-gap: 10px;
+                padding-top: 15px;
+            }
+
+            .btn {
+                @media screen and (max-width: 768px) {
+                    flex-basis: calc(50% - 6px);
+                }
+
+                @media screen and (max-width: 320px) {
+                    flex-basis: auto;
+                }
             }
         }
 
@@ -374,7 +478,7 @@
             justify-content: space-between;
             display: none;
             opacity: 0;
-            transition: opacity 0.5s, display 0.5s allow-discrete;
+            transition: opacity 0.3s, display 0.3s allow-discrete;
 
             &.show {
                 display: flex;
@@ -443,6 +547,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
+
+    @media screen and (max-width: 768px) {
+        height: 44px;
+    }
 
     &_grey {
         background-color: #EBECF5;
